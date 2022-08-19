@@ -1,0 +1,9 @@
+
+<h4 *ngIf = "categories.length == 0"> add new employee to start :-) !</h4>
+<div *ngFor="let category of categories" class="mr-2 ml-2 mb-2 mt-2">
+  <mat-card>
+    Name:{{category.name}}
+    | Function:{{category.function}}
+
+  </mat-card>
+</div>

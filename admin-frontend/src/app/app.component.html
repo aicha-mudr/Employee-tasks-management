@@ -1,0 +1,17 @@
+<mat-sidenav-container class="example-container fill-parent" >
+  <mat-sidenav #sidenav [mode]="mode.value">
+    <div>
+
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-app-banner *ngIf="!isUserLogged()"></app-app-banner>
+    <app-todo-header *ngIf="isUserLogged()"
+    (onMenuButtonClick) = "toggolMenuClick()"
+    (onAddTodoClick) = "createNewTodo()"
+    ></app-todo-header>
+    <router-outlet></router-outlet>
+    <app-todo-footer *ngIf="isUserLogged()"></app-todo-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

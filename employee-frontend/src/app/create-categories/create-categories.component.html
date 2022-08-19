@@ -1,0 +1,45 @@
+<mat-card class="example-card mb-2">
+    <mat-card-header>
+      <mat-card-title>New Employe</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="mb-2">
+            <app-todo-alert [content] = "errors" [alertType] = "'error'"></app-todo-alert>
+        </div>
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Full Name</mat-label>
+                <input matInput placeholder="Full Name" [(ngModel)] = "employeDto.name" [(ngModel)] = "userDto.lastName" [(ngModel)] = "userDto.firstName" [(ngModel)] = "userDto.userName"name="name">
+            </mat-form-field>
+
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" [(ngModel)] = "employeDto.email" [(ngModel)] = "userDto.email" name="name">
+          </mat-form-field>
+
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="Password" [(ngModel)] = "employeDto.password" [(ngModel)] = "userDto.password" name="name">
+          </mat-form-field>
+
+
+            <mat-form-field class="example-full-width">
+            <mat-label>Function</mat-label>
+                <textarea matInput #message maxlength="256" placeholder="Function details" [(ngModel)] = "employeDto.function" name="description"></textarea>
+                <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button  mat-raised-button color="primary" class="example-icon" (click) = "saveCategory()" (click)="updateUser()">
+            <mat-icon>save</mat-icon>
+            &nbsp;Save
+        </button>
+        <button  mat-raised-button color="warn" class="example-icon" (click)="cancel()">
+            <mat-icon>clear</mat-icon>
+            &nbsp;Cancel
+        </button>
+    </mat-card-actions>
+</mat-card>
